@@ -139,4 +139,4 @@ This review-only run took 68 tool calls and about 35 minutes of wall time in the
 
 ## 11. Where the documents live afterwards
 
-In review-only mode the documents land wherever the analyst named (here, a scratch folder). Once the audit proceeds they are committed to `docs/review/` in the repository, the findings log renamed to its issue number, and they travel with the pull request. The next audit of the same repository starts by reading them.
+In review-only mode the documents land wherever the analyst named (here, a scratch folder). Once the audit proceeds they are committed to `docs/audit/` in the repository, the findings log renamed to its issue number, and they travel with the pull request. The next audit of the same repository starts by reading them.

@@ -1,4 +1,4 @@
-# Template: the findings log (`docs/review/issueN-<slug>-log.md`)
+# Template: the findings log (`docs/audit/issueN-<slug>-log.md`)
 
 ## How to use this template
 
@@ -185,7 +185,7 @@ Carried to the next audit: <list>. README and `CLAUDE.md` sections synced from t
 > Paste at the top of §2 when a previous audit exists.
 
 ```
-Carried over from docs/review/issue<N-1>-<slug>-log.md (merged in PR #<M>):
+Carried over from docs/audit/issue<N-1>-<slug>-log.md (merged in PR #<M>):
 - Unticked acceptance criteria: <list>
 - Needs-examination items still open: <IDs and sub-issues>
 - Open sub-issues: #<a>, #<b>

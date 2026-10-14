@@ -1,4 +1,4 @@
-# Template: the science review (`docs/review/science-review.md`)
+# Template: the science review (`docs/audit/science-review.md`)
 
 ## How to use this template
 

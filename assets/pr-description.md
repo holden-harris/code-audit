@@ -16,7 +16,7 @@
 
 **Graceful degradation.** <What now runs, loudly, without each optional input, and what it falls back to.>
 
-**Docs.** <README sections rewritten or added; `CLAUDE.md`; the review documents under `docs/review/`.>
+**Docs.** <README sections rewritten or added; `CLAUDE.md`; the review documents under `docs/audit/`.>
 
 ## Needs examination
 
@@ -37,7 +37,7 @@
 
 - [ ] Baseline recorded before the first code change (workflow review §9 as-found; commit `<sha>`)
 - [ ] Fresh clone without data stops early with the missing-input table (workflow review §9 as-left)
-- [ ] Fresh clone with data and a minimal `config.local.R` runs end to end under `Rscript` (workflow review §9 as-left; `docs/review/<md5 compare>.csv`)
+- [ ] Fresh clone with data and a minimal `config.local.R` runs end to end under `Rscript` (workflow review §9 as-left; `docs/audit/<md5 compare>.csv`)
 - [ ] Independent interactive run on the same commit gives identical outputs (workflow review §9 as-left)
 - [ ] Every changed output has a cause (findings log §6; outputs commit `<sha>`)
 - [ ] `git ls-files -ci --exclude-standard` empty; no machine paths outside commented examples (findings log §9)

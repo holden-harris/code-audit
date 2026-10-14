@@ -16,7 +16,7 @@ Paths of the form `<skill>/...` are relative to this skill's own folder (the bas
 
 ## Vocabulary
 
-- **Science review, workflow review, findings log**: the three review documents (map below): `docs/review/science-review.md`, `docs/review/workflow-review.md` and `docs/review/issueN-<slug>-log.md`. Always named in full; a bare letter is a lens.
+- **Science review, workflow review, findings log**: the three review documents (map below): `docs/audit/science-review.md`, `docs/audit/workflow-review.md` and `docs/audit/issueN-<slug>-log.md`. Always named in full; a bare letter is a lens.
 - **Lens**: one of eight angles of review, each with a letter: P portability, R reproducibility, B bugs and fragility, D documentation, M methods and statistics, S stochasticity, T run time, E efficiency and artifacts.
 - **Finding ID**: lens letter plus a number, never reused: `P1`, `R2`, `M3`.
 - **Kind** (of a finding): `mechanical` (fixing it leaves outputs unchanged: paths, guards, dead code, documentation), `behavioural` (outputs change: seeding, grid template, input swap), `scientific` (what the method means changes: units, thresholds, pooling rules, parameter choices).
@@ -33,7 +33,7 @@ Paths of the form `<skill>/...` are relative to this skill's own folder (the bas
 
 State this to the user at the start of a new audit and hold to it:
 
-- **One audit = one issue, one branch, one draft pull request, three documents, commits split by type.** The documents live in the repository under `docs/review/`: `science-review.md` (the science review), `workflow-review.md` (the workflow review) and `issueN-<slug>-log.md` (the findings log; `draft-<slug>-log.md` in `review-only` mode). Repositories reviewed before this skill existed may hold the older `docs/issue*-plan.md`; treat it as a previous findings log.
+- **One audit = one issue, one branch, one draft pull request, three documents, commits split by type.** The documents live in the repository under `docs/audit/`: `science-review.md` (the science review), `workflow-review.md` (the workflow review) and `issueN-<slug>-log.md` (the findings log; `draft-<slug>-log.md` in `review-only` mode). Repositories reviewed before this skill existed may hold the older `docs/issue*-plan.md`; treat it as a previous findings log.
 - **Measure before the first code change.** A baseline run exists before any code is edited. Documents may be drafted before it. Only when no run is possible anywhere (the data no longer exists) do the committed outputs serve as the baseline, and the workflow review §9 says so.
 - **Nothing scientific changes silently.** `mechanical` fixes proceed on identical-output evidence. `behavioural` fixes need a decision number and a before/after table. `scientific` items go to the original author in the findings log §8 and a sub-issue, and the arithmetic stays as it is so outputs remain comparable. When the author decides, the item becomes a `behavioural` change in this pull request with its decision number, or stays with the sub-issue for later.
 - **Nothing is deleted.** Dead code, scratch files and superseded outputs move to `hoard/` (gitignored, with a README) or `archive/` (tracked, with a README table). Tracked files that should not be tracked leave the index with `git rm --cached` under a decision. History is rewritten only on the audit's own draft branch, under a decision, after confirming nobody else has pulled it (pause 9); never on a shared branch.
@@ -58,11 +58,11 @@ Detect in Phase 1 and confirm with the user:
 | `audit` | A repository not reviewed this way before | Full workflow; science review, workflow review and findings log all produced |
 | `fix` | One issue, one known problem | Phases 1, 2 (short), 3, 4 (smoke; baseline of the affected outputs only), 5 (only the lenses the problem touches), 6, 7, 8, 9. Findings log in its short form (appendix 1 of `<skill>/references/findings-log-template.md`). Science review and workflow review updated only where the fix changes them, and only if they exist |
 | `review-only` | Documents and findings wanted, no GitHub writes and no commits (common in cloud sessions, or before deciding to proceed) | Phases 3, 7 and 9 are skipped; no `record` commits; documents go to a path the user names; findings log is `draft-<slug>-log.md` |
-| `resume` | `docs/review/` holds a findings log with unticked boxes and its branch or pull request is open | Resume rule above; no new issue |
+| `resume` | `docs/audit/` holds a findings log with unticked boxes and its branch or pull request is open | Resume rule above; no new issue |
 | `second audit` | A previous review was merged | New issue and new findings log (appendix 2 of its template: carry-overs from the old findings log, its "needs examination" items, open sub-issues, README caveats; closed findings confirmed in one line each, not re-listed). Science review and workflow review revised in place with a version-history line. The baseline is now the committed deliverables, so Phase 4 starts with a drift check |
 | `own past code` | The user is the original author | The author target becomes the original layout on the machine that last ran it. If there is no remote, offer to create one (ask first) before Phase 3 |
 
-Signals: `docs/review/*`, `docs/issue*-plan.md`, `CLAUDE.md`, a local config example, a setup file, branches named `N-*`, merged pull requests.
+Signals: `docs/audit/*`, `docs/issue*-plan.md`, `CLAUDE.md`, a local config example, a setup file, branches named `N-*`, merged pull requests.
 
 ## Where it runs
 

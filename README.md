@@ -9,7 +9,7 @@ This repository is the skill itself: `SKILL.md` at the root, with its references
 Two things, together:
 
 1. **A walk-through with you.** Claude Code understands the code, runs it, reviews it through eight lenses, proposes fixes, and makes small tracked changes, pausing at ten points for your decisions. The work goes through a GitHub issue, a branch and a draft pull request, and every decision is recorded.
-2. **Three review documents**, written into the repository under `docs/review/`:
+2. **Three review documents**, written into the repository under `docs/audit/`:
    - `science-review.md`, the science review: what the pipeline does and why, in research-article form (objectives, context, data sources, methods, results, discussion). Stable and citable.
    - `workflow-review.md`, the workflow review: how to run, trust and maintain it, in plain language (inputs, pipeline, statistical models, randomness, outputs, run times, verification record). As long as it needs to be.
    - `issueN-<slug>-log.md`, the findings log: the living log of findings, recommended changes, decisions and acceptance criteria. One per issue; also the state the skill resumes from.
@@ -71,7 +71,7 @@ Every finding gets an ID made of a lens letter and a number (`P1`, `R2`): P port
 
 Modes: `audit` (full), `fix` (one issue, short form of the findings log), `review-only` (documents and findings, no GitHub writes or commits), `resume`, `second audit` (a previous review was merged), `own past code` (you are the original author). The skill detects the likely mode and asks.
 
-To resume after an interruption, type `/code-audit` again in the same repository: it reads `docs/review/`, `git log` and `git status` and continues at the first unticked step of the findings log.
+To resume after an interruption, type `/code-audit` again in the same repository: it reads `docs/audit/`, `git log` and `git status` and continues at the first unticked step of the findings log.
 
 ## Model and effort
 

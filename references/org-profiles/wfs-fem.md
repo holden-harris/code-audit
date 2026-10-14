@@ -21,7 +21,7 @@ Roles: the original author of the code is usually the person whose machine layou
 | Decisions | Numbered in findings log §7, and recorded in the issue that raised them |
 | External decision log | One line in Ops `docs/decisions.md` for each decision that affects a method or a shared convention |
 | Risk register | Ops `docs/risk-register.md`; a risk the audit finds that needs action becomes a task issue |
-| Review documents | `docs/review/` in the audited repository (GFISHER's first review, before this convention, lives at `docs/issue2-review-gfisher-repo-plan.md`) |
+| Review documents | `docs/audit/` in the audited repository (GFISHER's first review, before this convention, lives at `docs/issue2-review-gfisher-repo-plan.md`) |
 
 ## Issue body fields (from the Ops Task template)
 

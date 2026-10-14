@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - Two or three sentences: what the pipeline turns into what, and for whom.
 - Whether there is a build system, package or test suite. Usually none: one driver plus one file per stage, run interactively or with `Rscript`.
-- Point to `README.md` for inputs, configuration, outputs and caveats, and to `docs/review/` for the audit documents and their findings.
+- Point to `README.md` for inputs, configuration, outputs and caveats, and to `docs/audit/` for the audit documents and their findings.
 
 ## Running it
 

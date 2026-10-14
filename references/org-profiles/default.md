@@ -17,7 +17,7 @@ The generic profile, used when no other profile in this folder matches the remot
 | Decisions | findings log §7 only, numbered, dated and owned | Where decisions are recorded |
 | External decision log | None | Whether a line is added to a log outside the repository at merge |
 | Risk register | None | Whether audit findings feed an external register |
-| Review documents | `docs/review/` in the audited repository: `science-review.md`, `workflow-review.md`, `issueN-<slug>-log.md` | Where the three review documents live |
+| Review documents | `docs/audit/` in the audited repository: `science-review.md`, `workflow-review.md`, `issueN-<slug>-log.md` | Where the three review documents live |
 | Reviewer | The original author, requested at Phase 9 | Who is asked to review the PR |
 
 ## Notes on the fields
@@ -30,7 +30,7 @@ The generic profile, used when no other profile in this folder matches the remot
 - **Trailer lines.** The default imposes no `Co-Authored-By` line; where the user wants one, write it exactly as they give it and use it on every commit.
 - **Merge policy.** Asked rather than assumed, because squashing destroys the per-commit evidence the audit was careful to write; put the question once at Phase 9 with that trade-off stated.
 - **Decisions.** Numbered decisions in the findings log §7 are what commit bodies and the workflow review §9 cite; an external log, where a profile has one, gets one summary line per decision, never the discussion.
-- **Review documents.** `docs/review/` keeps the three review documents beside the code they describe, so they travel with every clone and every PR; a profile may choose another folder but should not move them out of the repository.
+- **Review documents.** `docs/audit/` keeps the three review documents beside the code they describe, so they travel with every clone and every PR; a profile may choose another folder but should not move them out of the repository.
 
 ## Writing a new profile
 

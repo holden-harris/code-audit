@@ -39,7 +39,7 @@ git push -u origin N-slug
 gh pr create --draft --base main --title "<issue title> (issue #N)" --body-file <body.md>
 ```
 
-The body carries `Fixes #N` (merging then closes the issue), the acceptance checklist copied from the findings log §9, and a line saying the review documents live in `docs/review/`. As the audit proceeds the evidence goes in: the baseline result line and comparison table from the workflow review §9 after Phase 4; the before/after table of every `outputs` commit; the run matrix after Phase 8. Update the body with `gh pr edit N --body-file <body.md>`; use a comment (`gh pr comment N --body-file <note.md>`) for progress the author should see as it happens, since body edits notify nobody.
+The body carries `Fixes #N` (merging then closes the issue), the acceptance checklist copied from the findings log §9, and a line saying the review documents live in `docs/audit/`. As the audit proceeds the evidence goes in: the baseline result line and comparison table from the workflow review §9 after Phase 4; the before/after table of every `outputs` commit; the run matrix after Phase 8. Update the body with `gh pr edit N --body-file <body.md>`; use a comment (`gh pr comment N --body-file <note.md>`) for progress the author should see as it happens, since body edits notify nobody.
 
 At Phase 9, after pause 10 and the pre-ready check on the findings log, rewrite the body from `<skill>/assets/pr-description.md` and then:
 

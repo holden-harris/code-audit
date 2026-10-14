@@ -24,7 +24,7 @@ Every pause message opens with `Pause k of 10, <name> (Phase n of 9, <phase name
 
 ## Documents
 
-Science review `docs/review/science-review.md` (objectives, context, data sources, methods, results, discussion) | Workflow review `docs/review/workflow-review.md` (run it, inputs, pipeline, models, randomness, outputs, run times, verification record, glossary) | Findings log `docs/review/issueN-<slug>-log.md` (status, scope, registers, evidence, fix design, plan, change log, decisions, needs examination, acceptance, GitHub record, closing summary)
+Science review `docs/audit/science-review.md` (objectives, context, data sources, methods, results, discussion) | Workflow review `docs/audit/workflow-review.md` (run it, inputs, pipeline, models, randomness, outputs, run times, verification record, glossary) | Findings log `docs/audit/issueN-<slug>-log.md` (status, scope, registers, evidence, fix design, plan, change log, decisions, needs examination, acceptance, GitHub record, closing summary)
 
 ## Findings
 

@@ -4,11 +4,11 @@
     {
       "id": 1,
       "name": "ecospacebasemap-review-only",
-      "prompt": "I'm in /home/user/EcospaceBasemap (an R repo that builds the Ecospace basemap grids; the original author wrote it, and my PR #1 that made the data setup portable was merged last month). Do a review-only pass over the whole repo: no GitHub writes, no commits, and R is not installed on this machine so don't try to run anything. I want the three review documents (the science and objectives review, the workflow review, and the log of findings, recommended changes and decisions) with file:line on every finding, the inputs/outputs/pipeline inventory, the stochasticity and run-time notes, and a decisions log skeleton. Write them into the outputs folder under docs/review/ and tell me which findings you would send to the original author rather than fix.",
-      "expected_output": "Three markdown documents under docs/review/ (science-review.md, workflow-review.md, issueN-<slug>-log.md) following the skill's templates, with the known EcospaceBasemap findings in the registers, scientific items routed to the author, run evidence marked pending, and no GitHub or git writes.",
+      "prompt": "I'm in /home/user/EcospaceBasemap (an R repo that builds the Ecospace basemap grids; the original author wrote it, and my PR #1 that made the data setup portable was merged last month). Do a review-only pass over the whole repo: no GitHub writes, no commits, and R is not installed on this machine so don't try to run anything. I want the three review documents (the science and objectives review, the workflow review, and the log of findings, recommended changes and decisions) with file:line on every finding, the inputs/outputs/pipeline inventory, the stochasticity and run-time notes, and a decisions log skeleton. Write them into the outputs folder under docs/audit/ and tell me which findings you would send to the original author rather than fix.",
+      "expected_output": "Three markdown documents under docs/audit/ (science-review.md, workflow-review.md, issueN-<slug>-log.md) following the skill's templates, with the known EcospaceBasemap findings in the registers, scientific items routed to the author, run evidence marked pending, and no GitHub or git writes.",
       "files": [],
       "expectations": [
-        "Three documents exist under docs/review/ in the outputs: science-review.md, workflow-review.md, and a findings log named issue<N>-<slug>-log.md (N may be a placeholder) or, in review-only mode, draft-<slug>-log.md",
+        "Three documents exist under docs/audit/ in the outputs: science-review.md, workflow-review.md, and a findings log named issue<N>-<slug>-log.md (N may be a placeholder) or, in review-only mode, draft-<slug>-log.md",
         "science-review.md contains sections for Summary, Objectives, Introduction and context, Data sources, Scientific methods, Results, Discussion and References",
         "workflow-review.md contains a stage table, a per-input section for the inputs, a statistical models section that states assumptions per model, a randomness section, a run-times section and a glossary",
         "The findings log has a status block and eight findings registers labelled P, R, B, D, M, S, T and E, and every findings row carries a file:line reference",
@@ -31,11 +31,11 @@
     {
       "id": 2,
       "name": "redtidemaps-workflow-review",
-      "prompt": "Repo at /home/user/wfs-fem/redtidemaps (WFS-FEM/RedTideMaps, the monthly red tide pipeline the original author and I maintain; two PRs already merged). Review-only: no GitHub, no commits, no R on this machine. I mostly want the workflow review document: the inputs (what is tracked, what gets pulled at run time, what is gitignored), the pipeline and data transformations, the statistical models explained in plain language, randomness and seeds, outputs, run times and caching, plus the housekeeping list of dead code and artifacts. Write the documents into the outputs folder under docs/review/.",
+      "prompt": "Repo at /home/user/wfs-fem/redtidemaps (WFS-FEM/RedTideMaps, the monthly red tide pipeline the original author and I maintain; two PRs already merged). Review-only: no GitHub, no commits, no R on this machine. I mostly want the workflow review document: the inputs (what is tracked, what gets pulled at run time, what is gitignored), the pipeline and data transformations, the statistical models explained in plain language, randomness and seeds, outputs, run times and caching, plus the housekeeping list of dead code and artifacts. Write the documents into the outputs folder under docs/audit/.",
       "expected_output": "A workflow-review.md (with the companion science review and findings log) that inventories RedTideMaps' inputs, outputs, models, randomness, run times and artifacts in plain language, with the known findings and no GitHub or git writes.",
       "files": [],
       "expectations": [
-        "A workflow-review.md exists under docs/review/ in the outputs, alongside a findings log (issue<N>-<slug>-log.md, or draft-<slug>-log.md in review-only mode)",
+        "A workflow-review.md exists under docs/audit/ in the outputs, alongside a findings log (issue<N>-<slug>-log.md, or draft-<slug>-log.md in review-only mode)",
         "The stage table names fn.buffered_hulls and make_redtide_ascii (scripts/polygon_clipping_rt.R) and fn.fit_monthly_sdmTMB (scripts/sdmTMB_HAB_data.R)",
         "The inputs section separates inputs tracked in the repository (VIIRS tif rasters, the MODIS FLH polygons Rdata, template rasters) from inputs pulled at run time into gitignored folders (FWC cell counts via the ArcGIS REST API into cell_counts/) and optional network inputs (MODIS or ERDDAP)",
         "The outputs section states that out/<res>min/ecospace_ascii/ and plots/ are tracked deliverables while sdm/, clipped/, combined/ and run logs are gitignored intermediates, citing .gitignore",
@@ -50,7 +50,7 @@
     {
       "id": 3,
       "name": "gfisher-second-audit",
-      "prompt": "Run /code-audit on /home/user/wfs-fem/gfisher. The original author merged my review PR (#4, issue #2) last week. Review-only this time: no GitHub, no commits, no R on this machine. Tell me which mode you would run in and why, what you would carry over from the last audit, and what is still wrong. Write anything you produce into the outputs folder under docs/review/.",
+      "prompt": "Run /code-audit on /home/user/wfs-fem/gfisher. The original author merged my review PR (#4, issue #2) last week. Review-only this time: no GitHub, no commits, no R on this machine. Tell me which mode you would run in and why, what you would carry over from the last audit, and what is still wrong. Write anything you produce into the outputs folder under docs/audit/.",
       "expected_output": "The run recognises the merged review, picks the second-audit mode, carries over the open items from docs/issue2-review-gfisher-repo-plan.md, confirms closed findings without re-reporting them, and reports the new findings, with no GitHub or git writes.",
       "files": [],
       "expectations": [

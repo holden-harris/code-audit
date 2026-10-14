@@ -1,4 +1,4 @@
-# Template: the workflow review (`docs/review/workflow-review.md`)
+# Template: the workflow review (`docs/audit/workflow-review.md`)
 
 ## How to use this template
 
