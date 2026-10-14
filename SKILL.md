@@ -33,7 +33,7 @@ Paths of the form `<skill>/...` are relative to this skill's own folder (the bas
 
 State this to the user at the start of a new audit and hold to it:
 
-- **One audit = one issue, one branch, one draft pull request, three documents, commits split by type.** The documents live in the repository under `docs/audit/`: `science-review.md` (the science review), `workflow-review.md` (the workflow review) and `issueN-<slug>-log.md` (the findings log; `draft-<slug>-log.md` in `review-only` mode). Repositories reviewed before this skill existed may hold the older `docs/issue*-plan.md`; treat it as a previous findings log.
+- **One audit = one issue, one branch, one draft pull request, three documents, commits split by type.** The documents live in the repository under `docs/audit/`: `science-review.md` (the science review), `workflow-review.md` (the workflow review) and `issueN-<slug>-log.md` (the findings log; `draft-<slug>-log.md` in `review-only` mode). Repositories reviewed before this skill existed may hold the older `docs/issue*-plan.md`, and the skill's first runs wrote to `docs/review/`; treat both as the previous documents and move them to `docs/audit/` with `git mv` in the next audit's scaffold commit.
 - **Measure before the first code change.** A baseline run exists before any code is edited. Documents may be drafted before it. Only when no run is possible anywhere (the data no longer exists) do the committed outputs serve as the baseline, and the workflow review §9 says so.
 - **Nothing scientific changes silently.** `mechanical` fixes proceed on identical-output evidence. `behavioural` fixes need a decision number and a before/after table. `scientific` items go to the original author in the findings log §8 and a sub-issue, and the arithmetic stays as it is so outputs remain comparable. When the author decides, the item becomes a `behavioural` change in this pull request with its decision number, or stays with the sub-issue for later.
 - **Nothing is deleted.** Dead code, scratch files and superseded outputs move to `hoard/` (gitignored, with a README) or `archive/` (tracked, with a README table). Tracked files that should not be tracked leave the index with `git rm --cached` under a decision. History is rewritten only on the audit's own draft branch, under a decision, after confirming nobody else has pulled it (pause 9); never on a shared branch.
@@ -62,7 +62,7 @@ Detect in Phase 1 and confirm with the user:
 | `second audit` | A previous review was merged | New issue and new findings log (appendix 2 of its template: carry-overs from the old findings log, its "needs examination" items, open sub-issues, README caveats; closed findings confirmed in one line each, not re-listed). Science review and workflow review revised in place with a version-history line. The baseline is now the committed deliverables, so Phase 4 starts with a drift check |
 | `own past code` | The user is the original author | The author target becomes the original layout on the machine that last ran it. If there is no remote, offer to create one (ask first) before Phase 3 |
 
-Signals: `docs/audit/*`, `docs/issue*-plan.md`, `CLAUDE.md`, a local config example, a setup file, branches named `N-*`, merged pull requests.
+Signals: `docs/audit/*` (or the older `docs/review/*`), `docs/issue*-plan.md`, `CLAUDE.md`, a local config example, a setup file, branches named `N-*`, merged pull requests.
 
 ## Where it runs
 
